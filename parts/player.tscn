@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://d2h0o4hste43r"]
+
+[ext_resource type="Texture2D" uid="uid://bqq7mlcmid4ch" path="res://src/images/idle-sprites.png" id="1_aaff8"]
+[ext_resource type="Script" uid="uid://b1vww7n6df0tv" path="res://scripts/player.gd" id="1_nh1j4"]
+[ext_resource type="Texture2D" uid="uid://c2d4qpcc3jt4w" path="res://src/images/walk-sprites.png" id="2_nh1j4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40wer"]
+atlas = ExtResource("1_aaff8")
+region = Rect2(0, 0, 250, 375)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2rpj"]
+atlas = ExtResource("1_aaff8")
+region = Rect2(250, 0, 250, 375)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oreqr"]
+atlas = ExtResource("1_aaff8")
+region = Rect2(500, 0, 250, 375)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vh72h"]
+atlas = ExtResource("1_aaff8")
+region = Rect2(750, 0, 250, 375)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmdr7"]
+atlas = ExtResource("2_nh1j4")
+region = Rect2(0, 0, 250, 375)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nej8a"]
+atlas = ExtResource("2_nh1j4")
+region = Rect2(250, 0, 250, 375)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48q2l"]
+atlas = ExtResource("2_nh1j4")
+region = Rect2(500, 0, 250, 375)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lfxu0"]
+animations = [{
+"frames": [{
+"duration": 1.7,
+"texture": SubResource("AtlasTexture_40wer")
+}, {
+"duration": 1.7,
+"texture": SubResource("AtlasTexture_c2rpj")
+}, {
+"duration": 1.7,
+"texture": SubResource("AtlasTexture_oreqr")
+}, {
+"duration": 1.7,
+"texture": SubResource("AtlasTexture_vh72h")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_vmdr7")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_nej8a")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_48q2l")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lfxu0"]
+radius = 40.0
+height = 162.0
+
+[node name="player" type="CharacterBody2D" unique_id=199731064]
+script = ExtResource("1_nh1j4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=868846423]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_lfxu0")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1803615982]
+shape = SubResource("CapsuleShape2D_lfxu0")
