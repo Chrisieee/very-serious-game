@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://b0vnlhsyvpw4g"]
+
+[ext_resource type="Texture2D" uid="uid://b1gecqvaxo8bk" path="res://src/images/gear.png" id="1_l656a"]
+[ext_resource type="Script" uid="uid://rv4qerojtl6" path="res://scripts/gears.gd" id="1_vw2y1"]
+[ext_resource type="Texture2D" uid="uid://c44nywrpcnn2o" path="res://src/images/gear1.png" id="2_vo74o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_odlsx"]
+size = Vector2(205, 202)
+
+[node name="gears" type="Area2D" unique_id=1995702643]
+script = ExtResource("1_vw2y1")
+
+[node name="Gear" type="Sprite2D" parent="." unique_id=1446678525]
+position = Vector2(-38, -38)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_l656a")
+
+[node name="Gear1" type="Sprite2D" parent="." unique_id=1436775519]
+position = Vector2(-70, -87)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_vo74o")
+
+[node name="Gear2" type="Sprite2D" parent="." unique_id=1356990856]
+position = Vector2(-115, -77)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_vo74o")
+
+[node name="Gear3" type="Sprite2D" parent="." unique_id=959842820]
+position = Vector2(-167, -109)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_l656a")
+
+[node name="Gear4" type="Sprite2D" parent="." unique_id=559991714]
+position = Vector2(-127, -164)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_l656a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2042861251]
+position = Vector2(-102, -101)
+shape = SubResource("RectangleShape2D_odlsx")
+
+[node name="label" type="RichTextLabel" parent="." unique_id=1941313953]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -268.5
+offset_top = -313.0
+offset_right = 64.5
+offset_bottom = -267.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[font_size=32] press \"e\" to interact"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

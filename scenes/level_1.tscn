@@ -1,8 +1,35 @@
 [gd_scene format=3 uid="uid://b7wpa27d27wsh"]
 
 [ext_resource type="PackedScene" uid="uid://d2h0o4hste43r" path="res://parts/player.tscn" id="1_014kd"]
+[ext_resource type="PackedScene" uid="uid://b0vnlhsyvpw4g" path="res://parts/gears.tscn" id="2_bswci"]
+[ext_resource type="Script" uid="uid://mcy5npn5bpup" path="res://scripts/minigame_container.gd" id="3_rus8k"]
 
 [node name="level1" type="Node2D" unique_id=2074154245]
 
+[node name="gears" parent="." unique_id=1995702643 instance=ExtResource("2_bswci")]
+position = Vector2(1277, 487)
+
 [node name="player" parent="." unique_id=199731064 instance=ExtResource("1_014kd")]
-position = Vector2(744, 384)
+position = Vector2(636, 408)
+
+[node name="camera" type="Camera2D" parent="player" unique_id=1174047530]
+position = Vector2(3, 0)
+limit_left = 0
+limit_top = 0
+limit_right = 2560
+limit_bottom = 720
+
+[node name="minigameContainer" type="Control" parent="player/camera" unique_id=881569690]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -639.0
+offset_top = -408.0
+offset_right = -639.0
+offset_bottom = -408.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("3_rus8k")

@@ -4,13 +4,22 @@ extends CharacterBody2D
 var screen_size
 
 @onready var sprite = $AnimatedSprite2D
+var current_interactable = null
+var ableToMove = true
 
 func _ready():
 	sprite.play("idle")
 	screen_size = get_viewport_rect().size
-	
+
+func _process(delta):
+	if Input.is_action_just_pressed("interact"):
+		if current_interactable:
+			current_interactable.interact() #interacten met objecten
+
 func _physics_process(delta):
 	var velocity = Vector2.ZERO
+	
+	if (!ableToMove): return #wanneer je in minigame zit kan je niet moven
 	
 	if Input.is_action_pressed("right"):
 		velocity.x += 1

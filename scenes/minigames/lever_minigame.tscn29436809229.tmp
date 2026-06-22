@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b5i6w51k2jywl"]
+
+[ext_resource type="Script" uid="uid://bws3coc7tgkl" path="res://scripts/lever_minigame.gd" id="1_yxu7n"]
+[ext_resource type="Script" uid="uid://27ksy44y43q5" path="res://scripts/lever.gd" id="2_ecm6j"]
+[ext_resource type="Texture2D" uid="uid://dkkqwkg6ki4jv" path="res://src/images/lever-down.png" id="3_e77q5"]
+
+[node name="leverMinigame" type="Node2D" unique_id=1118470877]
+script = ExtResource("1_yxu7n")
+
+[node name="Window" type="Window" parent="." unique_id=509886243]
+oversampling_override = 1.0
+title = "Lever minigame"
+initial_position = 1
+size = Vector2i(1000, 500)
+
+[node name="TextureButton" type="TextureButton" parent="Window" unique_id=516025343]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_ecm6j")
+
+[node name="sprite" type="Sprite2D" parent="Window/TextureButton" unique_id=266651934]
+position = Vector2(745, 234)
+texture = ExtResource("3_e77q5")
