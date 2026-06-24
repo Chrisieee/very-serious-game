@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b7wpa27d27wsh"]
 
+[ext_resource type="Script" uid="uid://c40k20q5b6r6v" path="res://scripts/level_1.gd" id="1_4nkto"]
 [ext_resource type="PackedScene" uid="uid://d2h0o4hste43r" path="res://parts/player.tscn" id="1_014kd"]
 [ext_resource type="PackedScene" uid="uid://b0vnlhsyvpw4g" path="res://parts/gears.tscn" id="2_bswci"]
 [ext_resource type="Script" uid="uid://mcy5npn5bpup" path="res://scripts/minigame_container.gd" id="3_rus8k"]
@@ -11,6 +12,7 @@
 size = Vector2(218.5, 211)
 
 [node name="level1" type="Node2D" unique_id=2074154245]
+script = ExtResource("1_4nkto")
 
 [node name="gears3" parent="." unique_id=1277832161 instance=ExtResource("2_bswci")]
 position = Vector2(2420, 480)

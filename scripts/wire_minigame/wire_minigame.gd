@@ -59,10 +59,11 @@ func _on_wire_click(wireId):
 	check.append(wireId)
 	var number = check.size()
 	
+	#TODO: je kan nog dezelfde klikken
 	if check.size() == 2:
 		if check[0] == check[1]:
 			correct.append(check[0])
-			_connect_wires(check[0])
+			_connect_wires(check[0]) 
 		else:
 			print("fail")
 		

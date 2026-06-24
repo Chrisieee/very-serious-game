@@ -3,8 +3,8 @@ extends Node
 var machines
 var brokenMachine
 
-func _ready():
-	await get_tree().process_frame #hij wacht 1 frame zodat alles laad
+func initialize_level():
+	await get_tree().process_frame
 	machines = get_tree().get_nodes_in_group("machines")
 	break_machine()
 

@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://d3q7s81j88kl3"]
 
-[ext_resource type="Script" uid="uid://c7cf66cuj55fw" path="res://scripts/wire_minigame.gd" id="1_j35fn"]
+[ext_resource type="Script" uid="uid://c7cf66cuj55fw" path="res://scripts/wire_minigame/wire_minigame.gd" id="1_j35fn"]
 [ext_resource type="Texture2D" uid="uid://b36djhn8xihgn" path="res://src/images/screen.png" id="1_rasex"]
 [ext_resource type="PackedScene" uid="uid://1ivogitwgck0" path="res://parts/win_popup.tscn" id="2_rasex"]
-[ext_resource type="Script" uid="uid://brm0voaepam6f" path="res://scripts/wire_end_left.gd" id="4_qctsc"]
-[ext_resource type="Script" uid="uid://b5lcwvm1ki07w" path="res://scripts/wire_end_right.gd" id="5_xa282"]
+[ext_resource type="Script" uid="uid://brm0voaepam6f" path="res://scripts/wire_minigame/wire_end_left.gd" id="4_qctsc"]
+[ext_resource type="Script" uid="uid://b5lcwvm1ki07w" path="res://scripts/wire_minigame/wire_end_right.gd" id="5_xa282"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xa282"]
 font_size = 20
@@ -30,7 +30,7 @@ offset_top = 36.0
 offset_right = 996.0
 offset_bottom = 117.0
 bbcode_enabled = true
-text = "[color=black][font_size=45] Connect the wires"
+text = "[color=black][font_size=45] Connect the wires by clicking"
 horizontal_alignment = 1
 
 [node name="leftWireEnds" type="Control" parent="Window" unique_id=709011566]

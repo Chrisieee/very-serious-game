@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b5i6w51k2jywl"]
 
-[ext_resource type="Script" uid="uid://bws3coc7tgkl" path="res://scripts/lever_minigame.gd" id="1_yxu7n"]
-[ext_resource type="Script" uid="uid://27ksy44y43q5" path="res://scripts/lever.gd" id="2_ecm6j"]
+[ext_resource type="Script" uid="uid://bws3coc7tgkl" path="res://scripts/lever_minigame/lever_minigame.gd" id="1_yxu7n"]
+[ext_resource type="Script" uid="uid://27ksy44y43q5" path="res://scripts/lever_minigame/lever.gd" id="2_ecm6j"]
 [ext_resource type="Texture2D" uid="uid://b36djhn8xihgn" path="res://src/images/screen.png" id="2_ncafp"]
 [ext_resource type="Texture2D" uid="uid://dkkqwkg6ki4jv" path="res://src/images/lever-down.png" id="3_e77q5"]
 [ext_resource type="Texture2D" uid="uid://c8owyu82v4o24" path="res://src/images/lever-up.png" id="3_ncafp"]

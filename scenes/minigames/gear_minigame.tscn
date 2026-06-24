@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d1v1sbjpcbmx4"]
 
 [ext_resource type="Texture2D" uid="uid://b36djhn8xihgn" path="res://src/images/screen.png" id="1_7tmqv"]
-[ext_resource type="Script" uid="uid://m6g06dmsyecn" path="res://scripts/gear_minigame.gd" id="1_wicu7"]
+[ext_resource type="Script" uid="uid://m6g06dmsyecn" path="res://scripts/gear_minigame/gear_minigame.gd" id="1_wicu7"]
 [ext_resource type="PackedScene" uid="uid://1ivogitwgck0" path="res://parts/win_popup.tscn" id="2_7tmqv"]
 
 [node name="gearMinigame" type="Node2D" unique_id=2110204404]

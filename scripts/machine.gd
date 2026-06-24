@@ -6,6 +6,12 @@ var isWorking = true
 func _ready():
 	add_to_group("machines")
 
+func _process(delta: float):
+	if isWorking:
+		$AnimationPlayer.play("on")
+	else:
+		$AnimationPlayer.stop()
+
 func _on_body_entered(body) -> void:
 	if !isWorking:
 		if body.name == "player":

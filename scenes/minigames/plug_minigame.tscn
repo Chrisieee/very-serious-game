@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://blegqfl7v00d1"]
 
 [ext_resource type="Texture2D" uid="uid://b36djhn8xihgn" path="res://src/images/screen.png" id="1_4m3bd"]
-[ext_resource type="Script" uid="uid://dpqg2orhldjsb" path="res://scripts/plug_minigame.gd" id="1_80ipq"]
+[ext_resource type="Script" uid="uid://dpqg2orhldjsb" path="res://scripts/plug_minigame/plug_minigame.gd" id="1_80ipq"]
 [ext_resource type="PackedScene" uid="uid://1ivogitwgck0" path="res://parts/win_popup.tscn" id="2_80ipq"]
 
 [node name="plugMinigame" type="Node2D" unique_id=585696369]
