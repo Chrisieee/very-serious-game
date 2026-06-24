@@ -2,6 +2,9 @@ extends Node
 
 var minigames = [
 	preload("res://scenes/minigames/lever_minigame.tscn"),
+	#preload("res://scenes/minigames/gear_minigame.tscn"),
+	#preload("res://scenes/minigames/wire_minigame.tscn"),
+	#preload("res://scenes/minigames/plug_minigame.tscn"),
 ]
 
 func start_random_minigame():

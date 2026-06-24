@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed = 400
-var screen_size
+@export var gravity = 200
 
 @onready var sprite = $AnimatedSprite2D
 var current_interactable = null
@@ -9,7 +9,6 @@ var ableToMove = true
 
 func _ready():
 	sprite.play("idle")
-	screen_size = get_viewport_rect().size
 
 func _process(delta):
 	if Input.is_action_just_pressed("interact"):
@@ -32,5 +31,8 @@ func _physics_process(delta):
 	else:
 		sprite.play("idle")
 	
+	if not is_on_floor():
+		velocity.y += gravity * delta
+	
 	position += velocity * speed * delta
-	position = position.clamp(Vector2.ZERO, screen_size)
+	move_and_slide()

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c5rqvmdqgwl18"]
+
+[node name="breakPopup" type="Panel" unique_id=2009987102]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -566.0
+offset_right = 566.0
+offset_bottom = 85.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1469770745]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer" unique_id=2087824390]
+layout_mode = 2
+bbcode_enabled = true
+text = "[font_size=45]One of the slot machines broke... Find it and fix it!"
+horizontal_alignment = 1

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://d3q7s81j88kl3"]
+
+[ext_resource type="Script" uid="uid://c7cf66cuj55fw" path="res://scripts/wire_minigame.gd" id="1_j35fn"]
+[ext_resource type="Texture2D" uid="uid://b36djhn8xihgn" path="res://src/images/screen.png" id="1_rasex"]
+[ext_resource type="PackedScene" uid="uid://1ivogitwgck0" path="res://parts/win_popup.tscn" id="2_rasex"]
+
+[node name="wire_minigame" type="Node2D" unique_id=388543699]
+script = ExtResource("1_j35fn")
+
+[node name="Window" type="Window" parent="." unique_id=1175263001]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(1000, 500)
+borderless = true
+always_on_top = true
+
+[node name="Screen" type="Sprite2D" parent="Window" unique_id=507247745]
+position = Vector2(501.5, 251)
+scale = Vector2(0.5035, 0.506)
+texture = ExtResource("1_rasex")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Window" unique_id=2115415298]
+offset_left = 3.0
+offset_top = 36.0
+offset_right = 996.0
+offset_bottom = 117.0
+bbcode_enabled = true
+text = "[color=black][font_size=45] ?"
+horizontal_alignment = 1
+
+[node name="winPopup" parent="Window" unique_id=1499180358 instance=ExtResource("2_rasex")]
+offset_top = -106.0
+offset_bottom = -21.0

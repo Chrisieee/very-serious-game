@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://d1v1sbjpcbmx4"]
+
+[ext_resource type="Texture2D" uid="uid://b36djhn8xihgn" path="res://src/images/screen.png" id="1_7tmqv"]
+[ext_resource type="Script" uid="uid://m6g06dmsyecn" path="res://scripts/gear_minigame.gd" id="1_wicu7"]
+[ext_resource type="PackedScene" uid="uid://1ivogitwgck0" path="res://parts/win_popup.tscn" id="2_7tmqv"]
+
+[node name="gearMinigame" type="Node2D" unique_id=2110204404]
+script = ExtResource("1_wicu7")
+
+[node name="Window" type="Window" parent="." unique_id=2027292372]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(1000, 500)
+borderless = true
+always_on_top = true
+
+[node name="Screen" type="Sprite2D" parent="Window" unique_id=1290890957]
+position = Vector2(501.5, 251)
+scale = Vector2(0.5035, 0.506)
+texture = ExtResource("1_7tmqv")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Window" unique_id=219937138]
+offset_left = 3.0
+offset_top = 36.0
+offset_right = 996.0
+offset_bottom = 117.0
+bbcode_enabled = true
+text = "[color=black][font_size=45] ?"
+horizontal_alignment = 1
+
+[node name="winPopup" parent="Window" unique_id=1499180358 instance=ExtResource("2_7tmqv")]
+offset_top = -106.0
+offset_bottom = -21.0
