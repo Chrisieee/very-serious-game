@@ -29,5 +29,6 @@ text = "[color=black][font_size=45] ?"
 horizontal_alignment = 1
 
 [node name="winPopup" parent="Window" unique_id=1499180358 instance=ExtResource("2_7tmqv")]
+visible = false
 offset_top = -106.0
 offset_bottom = -21.0

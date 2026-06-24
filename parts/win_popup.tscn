@@ -31,5 +31,5 @@ theme_override_constants/margin_bottom = 5
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer" unique_id=95739605]
 layout_mode = 2
 bbcode_enabled = true
-text = "[font_size=50]Whoohoo you did it!"
+text = "[font_size=50]You fixed the slot machine!"
 horizontal_alignment = 1

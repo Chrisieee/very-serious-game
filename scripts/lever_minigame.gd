@@ -7,7 +7,7 @@ var currentIndex = 0
 func _ready():
 	window.close_requested.connect(_on_close_requested)
 	
-	correctSequence.shuffle()
+	correctSequence.shuffle() #geeft een random volgorde
 	print(correctSequence)
 	
 	var levers = get_tree().get_nodes_in_group("levers")
@@ -19,8 +19,6 @@ func _on_close_requested():
 	queue_free()
 	
 func _on_lever_pulled(leverId):
-	print(leverId)
-	
 	var levers = get_tree().get_nodes_in_group("levers")
 	
 	if leverId == correctSequence[currentIndex]:
@@ -31,6 +29,7 @@ func _on_lever_pulled(leverId):
 		
 		if currentIndex >= correctSequence.size():
 			get_tree().get_first_node_in_group("winPopup").visible = true
+			
 			await get_tree().create_timer(1).timeout
 			GameManager.fix_machine()
 			_on_close_requested()

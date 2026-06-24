@@ -3,6 +3,11 @@
 [ext_resource type="Script" uid="uid://c7cf66cuj55fw" path="res://scripts/wire_minigame.gd" id="1_j35fn"]
 [ext_resource type="Texture2D" uid="uid://b36djhn8xihgn" path="res://src/images/screen.png" id="1_rasex"]
 [ext_resource type="PackedScene" uid="uid://1ivogitwgck0" path="res://parts/win_popup.tscn" id="2_rasex"]
+[ext_resource type="Script" uid="uid://brm0voaepam6f" path="res://scripts/wire_end_left.gd" id="4_qctsc"]
+[ext_resource type="Script" uid="uid://b5lcwvm1ki07w" path="res://scripts/wire_end_right.gd" id="5_xa282"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xa282"]
+font_size = 20
 
 [node name="wire_minigame" type="Node2D" unique_id=388543699]
 script = ExtResource("1_j35fn")
@@ -25,9 +30,190 @@ offset_top = 36.0
 offset_right = 996.0
 offset_bottom = 117.0
 bbcode_enabled = true
-text = "[color=black][font_size=45] ?"
+text = "[color=black][font_size=45] Connect the wires"
 horizontal_alignment = 1
 
+[node name="leftWireEnds" type="Control" parent="Window" unique_id=709011566]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 225.0
+offset_right = 265.0
+offset_bottom = 40.0
+
+[node name="wireEnd" type="TextureButton" parent="Window/leftWireEnds" unique_id=2087466633]
+layout_mode = 0
+offset_top = 150.0
+offset_right = 40.0
+offset_bottom = 190.0
+script = ExtResource("4_qctsc")
+
+[node name="ColorRect" type="ColorRect" parent="Window/leftWireEnds/wireEnd" unique_id=1998408919]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Marker2D" type="Marker2D" parent="Window/leftWireEnds/wireEnd" unique_id=862331912]
+position = Vector2(20, 20)
+
+[node name="Label" type="Label" parent="Window/leftWireEnds/wireEnd" unique_id=268309224]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "X"
+label_settings = SubResource("LabelSettings_xa282")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="wireEnd2" type="TextureButton" parent="Window/leftWireEnds" unique_id=924912343]
+layout_mode = 0
+offset_top = 225.0
+offset_right = 40.0
+offset_bottom = 265.0
+script = ExtResource("4_qctsc")
+
+[node name="ColorRect" type="ColorRect" parent="Window/leftWireEnds/wireEnd2" unique_id=1400471933]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Marker2D" type="Marker2D" parent="Window/leftWireEnds/wireEnd2" unique_id=309437803]
+position = Vector2(20, 20)
+
+[node name="Label" type="Label" parent="Window/leftWireEnds/wireEnd2" unique_id=1172223734]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "X"
+label_settings = SubResource("LabelSettings_xa282")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="wireEnd3" type="TextureButton" parent="Window/leftWireEnds" unique_id=2010495096]
+layout_mode = 0
+offset_top = 300.0
+offset_right = 40.0
+offset_bottom = 340.0
+script = ExtResource("4_qctsc")
+
+[node name="ColorRect" type="ColorRect" parent="Window/leftWireEnds/wireEnd3" unique_id=1150373126]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Marker2D" type="Marker2D" parent="Window/leftWireEnds/wireEnd3" unique_id=994459356]
+position = Vector2(20, 20)
+
+[node name="Label" type="Label" parent="Window/leftWireEnds/wireEnd3" unique_id=494267380]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "X"
+label_settings = SubResource("LabelSettings_xa282")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="rightWireEnds" type="Control" parent="Window" unique_id=1521073040]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 725.0
+offset_right = 765.0
+offset_bottom = 40.0
+
+[node name="wireEnd" type="TextureButton" parent="Window/rightWireEnds" unique_id=966880182]
+layout_mode = 0
+offset_top = 150.0
+offset_right = 40.0
+offset_bottom = 190.0
+script = ExtResource("5_xa282")
+
+[node name="ColorRect" type="ColorRect" parent="Window/rightWireEnds/wireEnd" unique_id=379188318]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Marker2D" type="Marker2D" parent="Window/rightWireEnds/wireEnd" unique_id=1496465227]
+position = Vector2(20, 20)
+
+[node name="Label" type="Label" parent="Window/rightWireEnds/wireEnd" unique_id=396341645]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "X"
+label_settings = SubResource("LabelSettings_xa282")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="wireEnd2" type="TextureButton" parent="Window/rightWireEnds" unique_id=1371387132]
+layout_mode = 0
+offset_top = 225.0
+offset_right = 40.0
+offset_bottom = 265.0
+script = ExtResource("5_xa282")
+
+[node name="ColorRect" type="ColorRect" parent="Window/rightWireEnds/wireEnd2" unique_id=1317321464]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Marker2D" type="Marker2D" parent="Window/rightWireEnds/wireEnd2" unique_id=1802669374]
+position = Vector2(20, 20)
+
+[node name="Label" type="Label" parent="Window/rightWireEnds/wireEnd2" unique_id=1534104987]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "X"
+label_settings = SubResource("LabelSettings_xa282")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="wireEnd3" type="TextureButton" parent="Window/rightWireEnds" unique_id=2049812868]
+layout_mode = 0
+offset_top = 300.0
+offset_right = 40.0
+offset_bottom = 340.0
+script = ExtResource("5_xa282")
+
+[node name="ColorRect" type="ColorRect" parent="Window/rightWireEnds/wireEnd3" unique_id=375405511]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Marker2D" type="Marker2D" parent="Window/rightWireEnds/wireEnd3" unique_id=164757788]
+position = Vector2(20, 20)
+
+[node name="Label" type="Label" parent="Window/rightWireEnds/wireEnd3" unique_id=1233719417]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "X"
+label_settings = SubResource("LabelSettings_xa282")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="winPopup" parent="Window" unique_id=1499180358 instance=ExtResource("2_rasex")]
-offset_top = -106.0
-offset_bottom = -21.0
+visible = false
