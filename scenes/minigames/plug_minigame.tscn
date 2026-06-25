@@ -3,6 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://b36djhn8xihgn" path="res://src/images/screen.png" id="1_4m3bd"]
 [ext_resource type="Script" uid="uid://dpqg2orhldjsb" path="res://scripts/plug_minigame/plug_minigame.gd" id="1_80ipq"]
 [ext_resource type="PackedScene" uid="uid://1ivogitwgck0" path="res://parts/win_popup.tscn" id="2_80ipq"]
+[ext_resource type="PackedScene" uid="uid://ctnl1syer12cj" path="res://parts/fail_popup.tscn" id="4_u3g28"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ld5o0"]
+font_size = 50
 
 [node name="plugMinigame" type="Node2D" unique_id=585696369]
 script = ExtResource("1_80ipq")
@@ -25,10 +29,30 @@ offset_top = 36.0
 offset_right = 996.0
 offset_bottom = 117.0
 bbcode_enabled = true
-text = "[color=black][font_size=45] ?"
+text = "[font_size=45]Maybe turn it off and on again?"
 horizontal_alignment = 1
 
 [node name="winPopup" parent="Window" unique_id=1499180358 instance=ExtResource("2_80ipq")]
 visible = false
 offset_top = -106.0
 offset_bottom = -21.0
+
+[node name="failPopup" parent="Window" unique_id=972607906 instance=ExtResource("4_u3g28")]
+visible = false
+offset_left = -871.5
+offset_top = -625.0
+offset_right = -128.5
+offset_bottom = -540.0
+
+[node name="timeLabel" type="Label" parent="Window" unique_id=1102988916]
+offset_left = 23.825
+offset_top = 23.82
+offset_right = 123.825
+offset_bottom = 83.82
+text = "5"
+label_settings = SubResource("LabelSettings_ld5o0")
+
+[node name="Timer" type="Timer" parent="." unique_id=1353746162]
+wait_time = 5.0
+one_shot = true
+autostart = true

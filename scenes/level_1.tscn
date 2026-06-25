@@ -2,11 +2,14 @@
 
 [ext_resource type="Script" uid="uid://c40k20q5b6r6v" path="res://scripts/level_1.gd" id="1_4nkto"]
 [ext_resource type="PackedScene" uid="uid://d2h0o4hste43r" path="res://parts/player.tscn" id="1_014kd"]
+[ext_resource type="Texture2D" uid="uid://buqb1rtd1gsfh" path="res://src/images/slotmachine.png" id="2_15mv3"]
 [ext_resource type="PackedScene" uid="uid://b0vnlhsyvpw4g" path="res://parts/gears.tscn" id="2_bswci"]
 [ext_resource type="Script" uid="uid://mcy5npn5bpup" path="res://scripts/minigame_container.gd" id="3_rus8k"]
 [ext_resource type="Texture2D" uid="uid://16u1y4yqxpvq" path="res://icon.svg" id="4_5xbjy"]
 [ext_resource type="PackedScene" uid="uid://c5rqvmdqgwl18" path="res://parts/break_popup.tscn" id="5_fcfvj"]
+[ext_resource type="Script" uid="uid://dtr36spuob7l" path="res://scripts/hud.gd" id="7_2y5yt"]
 [ext_resource type="Script" uid="uid://b3lvdx7teqtki" path="res://scripts/break_popup.gd" id="7_pa8r4"]
+[ext_resource type="Texture2D" uid="uid://cic3q1bqcnyyf" path="res://src/images/wrench.png" id="9_e3sih"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lfxu0"]
 size = Vector2(218.5, 211)
@@ -14,16 +17,34 @@ size = Vector2(218.5, 211)
 [node name="level1" type="Node2D" unique_id=2074154245]
 script = ExtResource("1_4nkto")
 
+[node name="Slotmachine" type="Sprite2D" parent="." unique_id=1699435314]
+position = Vector2(630, 412)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_15mv3")
+flip_h = true
+
+[node name="Slotmachine2" type="Sprite2D" parent="." unique_id=1302372520]
+position = Vector2(1410, 412)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_15mv3")
+flip_h = true
+
+[node name="Slotmachine3" type="Sprite2D" parent="." unique_id=991202283]
+position = Vector2(2190, 412)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_15mv3")
+flip_h = true
+
 [node name="gears3" parent="." unique_id=1277832161 instance=ExtResource("2_bswci")]
-position = Vector2(2420, 480)
+position = Vector2(2422, 566)
 machineId = 3
 
 [node name="gears2" parent="." unique_id=1995702643 instance=ExtResource("2_bswci")]
-position = Vector2(1650, 480)
+position = Vector2(1642, 566)
 machineId = 2
 
 [node name="gears" parent="." unique_id=88960954 instance=ExtResource("2_bswci")]
-position = Vector2(880, 480)
+position = Vector2(863, 566)
 machineId = 1
 
 [node name="player" parent="." unique_id=199731064 instance=ExtResource("1_014kd")]
@@ -52,6 +73,7 @@ size_flags_vertical = 3
 script = ExtResource("3_rus8k")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=531357643]
+position = Vector2(-3, 57)
 
 [node name="Icon" type="Sprite2D" parent="StaticBody2D" unique_id=1760723633]
 position = Vector2(113.5, 616.5)
@@ -196,8 +218,38 @@ shape = SubResource("RectangleShape2D_lfxu0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1095905840]
 
+[node name="hud" type="Control" parent="CanvasLayer" unique_id=1227392110]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_2y5yt")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/hud" unique_id=614211759]
+layout_mode = 0
+offset_right = 296.0
+offset_bottom = 100.0
+theme_override_constants/separation = -224
+
+[node name="life1" type="TextureRect" parent="CanvasLayer/hud/HBoxContainer" unique_id=1569631670]
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("9_e3sih")
+
+[node name="life2" type="TextureRect" parent="CanvasLayer/hud/HBoxContainer" unique_id=946282865]
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("9_e3sih")
+
+[node name="life3" type="TextureRect" parent="CanvasLayer/hud/HBoxContainer" unique_id=1245054115]
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("9_e3sih")
+
 [node name="breakPopup" parent="CanvasLayer" unique_id=2009987102 instance=ExtResource("5_fcfvj")]
 visible = false
 offset_left = -558.0
+offset_top = 28.0
 offset_right = 574.0
+offset_bottom = 113.0
 script = ExtResource("7_pa8r4")

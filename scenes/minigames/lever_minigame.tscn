@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://dkkqwkg6ki4jv" path="res://src/images/lever-down.png" id="3_e77q5"]
 [ext_resource type="Texture2D" uid="uid://c8owyu82v4o24" path="res://src/images/lever-up.png" id="3_ncafp"]
 [ext_resource type="PackedScene" uid="uid://1ivogitwgck0" path="res://parts/win_popup.tscn" id="6_hr7dq"]
+[ext_resource type="PackedScene" uid="uid://ctnl1syer12cj" path="res://parts/fail_popup.tscn" id="7_ff5hv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lfxu0"]
+font_size = 50
 
 [node name="leverMinigame" type="Node2D" unique_id=1118470877]
 script = ExtResource("1_yxu7n")
@@ -104,10 +108,26 @@ offset_top = 36.0
 offset_right = 996.0
 offset_bottom = 117.0
 bbcode_enabled = true
-text = "[color=black][font_size=45] Pull the [img=60x70]res://src/images/lever-down.png[/img]'s in the right order:"
+text = "[font_size=45] Pull the [img=60x70]res://src/images/lever-down.png[/img]'s in the right order:"
 horizontal_alignment = 1
 
 [node name="winPopup" parent="Window" unique_id=1499180358 instance=ExtResource("6_hr7dq")]
 visible = false
 offset_top = -106.0
 offset_bottom = -21.0
+
+[node name="failPopup" parent="Window" unique_id=1588726954 instance=ExtResource("7_ff5hv")]
+visible = false
+
+[node name="timeLabel" type="Label" parent="Window" unique_id=1536320200]
+offset_left = 23.825
+offset_top = 23.82
+offset_right = 123.825
+offset_bottom = 78.81996
+text = "5"
+label_settings = SubResource("LabelSettings_lfxu0")
+
+[node name="Timer" type="Timer" parent="." unique_id=1442243736]
+wait_time = 5.0
+one_shot = true
+autostart = true

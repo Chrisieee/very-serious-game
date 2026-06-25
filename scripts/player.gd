@@ -10,7 +10,7 @@ var ableToMove = true
 func _ready():
 	sprite.play("idle")
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("interact"):
 		if current_interactable:
 			current_interactable.interact() #interacten met objecten

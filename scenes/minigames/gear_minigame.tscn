@@ -3,6 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://b36djhn8xihgn" path="res://src/images/screen.png" id="1_7tmqv"]
 [ext_resource type="Script" uid="uid://m6g06dmsyecn" path="res://scripts/gear_minigame/gear_minigame.gd" id="1_wicu7"]
 [ext_resource type="PackedScene" uid="uid://1ivogitwgck0" path="res://parts/win_popup.tscn" id="2_7tmqv"]
+[ext_resource type="PackedScene" uid="uid://ctnl1syer12cj" path="res://parts/fail_popup.tscn" id="4_ix5gd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_urbq6"]
+font_size = 50
 
 [node name="gearMinigame" type="Node2D" unique_id=2110204404]
 script = ExtResource("1_wicu7")
@@ -25,10 +29,26 @@ offset_top = 36.0
 offset_right = 996.0
 offset_bottom = 117.0
 bbcode_enabled = true
-text = "[color=black][font_size=45] ?"
+text = "[font_size=45]Place the gears in the right place"
 horizontal_alignment = 1
 
 [node name="winPopup" parent="Window" unique_id=1499180358 instance=ExtResource("2_7tmqv")]
 visible = false
 offset_top = -106.0
 offset_bottom = -21.0
+
+[node name="failPopup" parent="Window" unique_id=1483924991 instance=ExtResource("4_ix5gd")]
+visible = false
+
+[node name="timeLabel" type="Label" parent="Window" unique_id=39157652]
+offset_left = 23.825
+offset_top = 23.82
+offset_right = 123.825
+offset_bottom = 78.81996
+text = "5"
+label_settings = SubResource("LabelSettings_urbq6")
+
+[node name="Timer" type="Timer" parent="." unique_id=1258276121]
+wait_time = 5.0
+one_shot = true
+autostart = true

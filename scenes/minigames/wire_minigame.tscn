@@ -5,9 +5,21 @@
 [ext_resource type="PackedScene" uid="uid://1ivogitwgck0" path="res://parts/win_popup.tscn" id="2_rasex"]
 [ext_resource type="Script" uid="uid://brm0voaepam6f" path="res://scripts/wire_minigame/wire_end_left.gd" id="4_qctsc"]
 [ext_resource type="Script" uid="uid://b5lcwvm1ki07w" path="res://scripts/wire_minigame/wire_end_right.gd" id="5_xa282"]
+[ext_resource type="PackedScene" uid="uid://ctnl1syer12cj" path="res://parts/fail_popup.tscn" id="6_cbald"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xa282"]
 font_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xa282"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cbald"]
+font_size = 50
 
 [node name="wire_minigame" type="Node2D" unique_id=388543699]
 script = ExtResource("1_j35fn")
@@ -30,7 +42,7 @@ offset_top = 36.0
 offset_right = 996.0
 offset_bottom = 117.0
 bbcode_enabled = true
-text = "[color=black][font_size=45] Connect the wires by clicking"
+text = "[font_size=45]Connect the wires by clicking"
 horizontal_alignment = 1
 
 [node name="leftWireEnds" type="Control" parent="Window" unique_id=709011566]
@@ -46,6 +58,7 @@ offset_top = 150.0
 offset_right = 40.0
 offset_bottom = 190.0
 script = ExtResource("4_qctsc")
+wireId = 1
 
 [node name="ColorRect" type="ColorRect" parent="Window/leftWireEnds/wireEnd" unique_id=1998408919]
 layout_mode = 1
@@ -68,12 +81,21 @@ label_settings = SubResource("LabelSettings_xa282")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Border" type="Panel" parent="Window/leftWireEnds/wireEnd" unique_id=1911385559]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xa282")
+
 [node name="wireEnd2" type="TextureButton" parent="Window/leftWireEnds" unique_id=924912343]
 layout_mode = 0
 offset_top = 225.0
 offset_right = 40.0
 offset_bottom = 265.0
 script = ExtResource("4_qctsc")
+wireId = 2
 
 [node name="ColorRect" type="ColorRect" parent="Window/leftWireEnds/wireEnd2" unique_id=1400471933]
 layout_mode = 1
@@ -96,12 +118,21 @@ label_settings = SubResource("LabelSettings_xa282")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Border" type="Panel" parent="Window/leftWireEnds/wireEnd2" unique_id=969306750]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xa282")
+
 [node name="wireEnd3" type="TextureButton" parent="Window/leftWireEnds" unique_id=2010495096]
 layout_mode = 0
 offset_top = 300.0
 offset_right = 40.0
 offset_bottom = 340.0
 script = ExtResource("4_qctsc")
+wireId = 3
 
 [node name="ColorRect" type="ColorRect" parent="Window/leftWireEnds/wireEnd3" unique_id=1150373126]
 layout_mode = 1
@@ -124,6 +155,14 @@ label_settings = SubResource("LabelSettings_xa282")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Border" type="Panel" parent="Window/leftWireEnds/wireEnd3" unique_id=1328287740]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xa282")
+
 [node name="rightWireEnds" type="Control" parent="Window" unique_id=1521073040]
 layout_mode = 3
 anchors_preset = 0
@@ -137,6 +176,7 @@ offset_top = 150.0
 offset_right = 40.0
 offset_bottom = 190.0
 script = ExtResource("5_xa282")
+wireId = 4
 
 [node name="ColorRect" type="ColorRect" parent="Window/rightWireEnds/wireEnd" unique_id=379188318]
 layout_mode = 1
@@ -159,12 +199,21 @@ label_settings = SubResource("LabelSettings_xa282")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Border" type="Panel" parent="Window/rightWireEnds/wireEnd" unique_id=1615744818]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xa282")
+
 [node name="wireEnd2" type="TextureButton" parent="Window/rightWireEnds" unique_id=1371387132]
 layout_mode = 0
 offset_top = 225.0
 offset_right = 40.0
 offset_bottom = 265.0
 script = ExtResource("5_xa282")
+wireId = 5
 
 [node name="ColorRect" type="ColorRect" parent="Window/rightWireEnds/wireEnd2" unique_id=1317321464]
 layout_mode = 1
@@ -187,12 +236,21 @@ label_settings = SubResource("LabelSettings_xa282")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Border" type="Panel" parent="Window/rightWireEnds/wireEnd2" unique_id=610894854]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xa282")
+
 [node name="wireEnd3" type="TextureButton" parent="Window/rightWireEnds" unique_id=2049812868]
 layout_mode = 0
 offset_top = 300.0
 offset_right = 40.0
 offset_bottom = 340.0
 script = ExtResource("5_xa282")
+wireId = 6
 
 [node name="ColorRect" type="ColorRect" parent="Window/rightWireEnds/wireEnd3" unique_id=375405511]
 layout_mode = 1
@@ -215,5 +273,29 @@ label_settings = SubResource("LabelSettings_xa282")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Border" type="Panel" parent="Window/rightWireEnds/wireEnd3" unique_id=829104386]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xa282")
+
 [node name="winPopup" parent="Window" unique_id=1499180358 instance=ExtResource("2_rasex")]
 visible = false
+
+[node name="failPopup" parent="Window" unique_id=304829615 instance=ExtResource("6_cbald")]
+visible = false
+
+[node name="timeLabel" type="Label" parent="Window" unique_id=1038496991]
+offset_left = 23.825
+offset_top = 23.82
+offset_right = 123.825
+offset_bottom = 78.81996
+text = "5"
+label_settings = SubResource("LabelSettings_cbald")
+
+[node name="Timer" type="Timer" parent="." unique_id=1108694785]
+wait_time = 5.0
+one_shot = true
+autostart = true

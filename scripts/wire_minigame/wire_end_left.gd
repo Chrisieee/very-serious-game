@@ -1,10 +1,12 @@
 extends TextureButton
 
-var wireId
-signal click(wireId)
+@export var wireId: int
+var colorId
+signal click(wireId, colorId)
 
 func _ready():
 	add_to_group("wire_end_left")
+	add_to_group("wire_ends")
 
 func _pressed():
-	click.emit(wireId)
+	click.emit(wireId, colorId)

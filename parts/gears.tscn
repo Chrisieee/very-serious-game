@@ -93,6 +93,10 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odlsx"]
 size = Vector2(205, 202)
 
+[sub_resource type="LabelSettings" id="LabelSettings_lfxu0"]
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
 [node name="gears" type="Area2D" unique_id=1995702643]
 script = ExtResource("1_vw2y1")
 
@@ -147,6 +151,18 @@ offset_top = -116.0
 offset_right = 53.0
 offset_bottom = -78.0
 color = Color(0.4862745, 0.9882353, 0, 1)
+
+[node name="Label" type="Label" parent="light" unique_id=726645559]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "|"
+label_settings = SubResource("LabelSettings_lfxu0")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

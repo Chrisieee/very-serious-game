@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://bq3bs8wye4vv4"]
+
+[ext_resource type="Texture2D" uid="uid://7tw53y3vcwfb" path="res://src/images/menu-slotmachine.png" id="1_yh4w3"]
+[ext_resource type="Script" uid="uid://p3k6jlubb1qj" path="res://scripts/button.gd" id="2_4n57j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4bl2o"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8e7d0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="completed" type="Node2D" unique_id=319345950]
+
+[node name="Panel2" type="Panel" parent="." unique_id=1257320414]
+offset_left = 36.0
+offset_top = 253.0
+offset_right = 1255.0
+offset_bottom = 723.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4bl2o")
+
+[node name="Slotmachine" type="Sprite2D" parent="." unique_id=636014944]
+position = Vector2(642, 664)
+texture = ExtResource("1_yh4w3")
+
+[node name="Panel" type="Panel" parent="." unique_id=1295064007]
+offset_left = 38.0
+offset_top = 104.0
+offset_right = 1252.0
+offset_bottom = 569.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8e7d0")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=582417042]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=2121613434]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/MarginContainer/VBoxContainer" unique_id=1729712741]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+bbcode_enabled = true
+text = "[color=black][font_size=70
+]You did it!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel/MarginContainer/VBoxContainer" unique_id=401293998]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "[color=black][font_size=24]You succesfully completed your first day on the very serious job of fixing slot machines! 
+
+Not many people can say they completed the first day succesfully so good job to you! You are the perfect person for this job!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=754654557]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_right = 300
+
+[node name="Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/MarginContainer" unique_id=359063826]
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("2_4n57j")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/Button" unique_id=1501130026]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[color=white][font_size=40
+]Start over"
+horizontal_alignment = 1
+vertical_alignment = 1
