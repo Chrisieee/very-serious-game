@@ -1,19 +1,24 @@
 extends Node
 
+var startLives = 1
 var machines
 var hud
 var brokenMachine
 var levelActive = false
-var lives = 3
+var lives
 
 func initialize_level():
+	lives = startLives
 	levelActive = true
 	await get_tree().process_frame
 	machines = get_tree().get_nodes_in_group("machines")
 	hud = get_tree().current_scene.get_node("CanvasLayer/hud")
 	break_machine()
+	hud.update_lives(lives)
 
 func break_machine():
+	if !levelActive: return
+	
 	var rng = RandomNumberGenerator.new()
 	var number = rng.randi_range(1, machines.size())
 
