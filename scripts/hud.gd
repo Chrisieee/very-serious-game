@@ -1,9 +1,9 @@
 extends Control
 
 @onready var lifeIcons = [
-	$HBoxContainer/life1,
-	$HBoxContainer/life2,
-	$HBoxContainer/life3
+	$Panel/HBoxContainer/life1,
+	$Panel/HBoxContainer/life2,
+	$Panel/HBoxContainer/life3
 ]
 
 func update_lives(lives: int):

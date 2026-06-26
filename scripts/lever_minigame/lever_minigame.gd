@@ -24,6 +24,7 @@ func _process(delta: float):
 	timeLabel.text = str(int(ceil(timer.time_left)))
 
 func _on_close_requested(complete):
+	await get_tree().create_timer(1).timeout
 	MinigameManager.close_minigame(complete, preload("res://scenes/minigames/lever_minigame.tscn"))
 	queue_free()
 
@@ -43,6 +44,7 @@ func _on_lever_pulled(leverId):
 				lever.change_color(true)
 		
 		if currentIndex >= correctSequence.size():
+			timer.paused = true
 			get_tree().get_first_node_in_group("winPopup").visible = true
 			
 			await get_tree().create_timer(1).timeout

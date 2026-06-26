@@ -52,13 +52,13 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_vmdr7")
 }, {
-"duration": 1.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_nej8a")
 }, {
-"duration": 1.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_48q2l")
 }],
 "loop": 1,
@@ -68,15 +68,16 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lfxu0"]
 radius = 40.0
-height = 162.0
+height = 158.0
 
 [node name="player" type="CharacterBody2D" unique_id=199731064]
 script = ExtResource("1_nh1j4")
+speed = 500
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=868846423]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_lfxu0")
-animation = &"idle"
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1803615982]
 shape = SubResource("CapsuleShape2D_lfxu0")

@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://b00gh261vk41x"]
+
+[ext_resource type="Texture2D" uid="uid://b5qpgn7lxwv6q" path="res://src/images/slots-broken.png" id="1_8iug2"]
+[ext_resource type="Script" uid="uid://be3fq4hk3lu2q" path="res://scripts/slots.gd" id="1_tjour"]
+[ext_resource type="Texture2D" uid="uid://icn5h0ctal6h" path="res://src/images/slots.png" id="3_k8nkw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkllf"]
+atlas = ExtResource("3_k8nkw")
+region = Rect2(0, 0, 1125, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5quqx"]
+atlas = ExtResource("3_k8nkw")
+region = Rect2(1125, 0, 1125, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cq5vw"]
+atlas = ExtResource("3_k8nkw")
+region = Rect2(2250, 0, 1125, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lfxu0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8iug2")
+}],
+"loop": 1,
+"name": &"broken",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tkllf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5quqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cq5vw")
+}],
+"loop": 1,
+"name": &"on",
+"speed": 5.0
+}]
+
+[node name="slots" type="Node2D" unique_id=738284759]
+script = ExtResource("1_tjour")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2031545901]
+scale = Vector2(0.55, 0.55)
+sprite_frames = SubResource("SpriteFrames_lfxu0")
+animation = &"on"
+frame_progress = 0.5325257
+speed_scale = 1.5

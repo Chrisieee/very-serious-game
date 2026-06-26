@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://7tw53y3vcwfb" path="res://src/images/menu-slotmachine.png" id="1_c2vp5"]
 [ext_resource type="Script" uid="uid://p3k6jlubb1qj" path="res://scripts/button.gd" id="2_c2vp5"]
+[ext_resource type="Script" uid="uid://kaw3661kxwlu" path="res://scripts/quit-button.gd" id="3_k81wc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lfxu0"]
 bg_color = Color(1, 1, 1, 1)
@@ -62,7 +63,7 @@ size_flags_vertical = 3
 bbcode_enabled = true
 text = "[color=black][font_size=24] You just accepted a job as the person who repairs slot machines. 
 
-When you're on the job, you get shrunk down so you can fit inside the slot machines and fix them. You need to be fast to fix them other wise the people get mad and you will get fired!
+When you're on the job, you get shrunk down so you can fit inside the slot machines and fix them. You need to be fast to fix them otherwise the people get mad and you will get fired!
 
 This is a very serious job so don't mess it up!
 "
@@ -70,17 +71,22 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=1017867571]
-custom_minimum_size = Vector2(0, 75)
+custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
 theme_override_constants/margin_left = 300
 theme_override_constants/margin_right = 300
 
-[node name="Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/MarginContainer" unique_id=2061167502]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/MarginContainer" unique_id=771350358]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=2061167502]
 layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("2_c2vp5")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/Button" unique_id=1060484657]
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/Button" unique_id=1060484657]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -93,3 +99,30 @@ text = "[color=white][font_size=40
 ]Start"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1521812537]
+custom_maximum_size = Vector2(-1, 30)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_right = 150
+
+[node name="Button2" type="Button" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=1660135026]
+custom_maximum_size = Vector2(200, 30)
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("3_k81wc")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/MarginContainer/Button2" unique_id=164064896]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+bbcode_enabled = true
+text = "[color=white][font_size=20
+]I quit"
+horizontal_alignment = 1

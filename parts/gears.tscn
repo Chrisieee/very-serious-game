@@ -132,18 +132,26 @@ texture = ExtResource("1_l656a")
 position = Vector2(-102, -101)
 shape = SubResource("RectangleShape2D_odlsx")
 
-[node name="label" type="RichTextLabel" parent="." unique_id=1941313953]
+[node name="label" type="Panel" parent="." unique_id=1505802013]
 visible = false
+offset_left = -310.0
+offset_top = -291.0
+offset_right = 86.0
+offset_bottom = -251.0
+
+[node name="label" type="RichTextLabel" parent="label" unique_id=1941313953]
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -306.0
-offset_top = -312.0
-offset_right = 90.5
-offset_bottom = -254.0
+offset_left = -199.0
+offset_top = -5.0
+offset_right = 198.0
+offset_bottom = 40.0
 grow_horizontal = 2
 bbcode_enabled = true
-text = "[font_size=36] press \"e\" to interact"
+text = "[font_size=36]press \"e\" to interact"
+horizontal_alignment = 1
 
 [node name="light" type="ColorRect" parent="." unique_id=588883576]
 offset_left = 19.0

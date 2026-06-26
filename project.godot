@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 MinigameManager="*uid://csrf52ybajxlq"
 GameManager="*uid://vxlwos3a48jq"
+AudioManager="*uid://poxh6s4vtv2b"
 
 [display]
 

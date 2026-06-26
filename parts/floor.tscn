@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://r45skgjn65ib"]
+
+[ext_resource type="Texture2D" uid="uid://bugqlni71dtg7" path="res://src/images/floor.png" id="1_867us"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfxu0"]
+size = Vector2(1320, 85)
+
+[node name="floor" type="StaticBody2D" unique_id=917729859]
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=877332413]
+position = Vector2(60, -42)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_867us")
+
+[node name="Icon2" type="Sprite2D" parent="." unique_id=720490501]
+position = Vector2(180, -42)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_867us")
+
+[node name="Icon3" type="Sprite2D" parent="." unique_id=487685624]
+position = Vector2(300, -42)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_867us")
+
+[node name="Icon4" type="Sprite2D" parent="." unique_id=1758824412]
+position = Vector2(420, -42)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_867us")
+
+[node name="Icon5" type="Sprite2D" parent="." unique_id=1893686152]
+position = Vector2(540, -42)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_867us")
+
+[node name="Icon6" type="Sprite2D" parent="." unique_id=746850990]
+position = Vector2(660, -42)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_867us")
+
+[node name="Icon7" type="Sprite2D" parent="." unique_id=538352180]
+position = Vector2(780, -42)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_867us")
+
+[node name="Icon8" type="Sprite2D" parent="." unique_id=1880352095]
+position = Vector2(900, -42)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_867us")
+
+[node name="Icon9" type="Sprite2D" parent="." unique_id=937886012]
+position = Vector2(1020, -42)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_867us")
+
+[node name="Icon10" type="Sprite2D" parent="." unique_id=1404040184]
+position = Vector2(1140, -42)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_867us")
+
+[node name="Icon11" type="Sprite2D" parent="." unique_id=1462326618]
+position = Vector2(1260, -42)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_867us")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=436416442]
+position = Vector2(660, -42.5)
+shape = SubResource("RectangleShape2D_lfxu0")

@@ -31,6 +31,7 @@ func _on_timer_timeout():
 	_on_close_requested(false)
 
 func _on_close_requested(complete):
+	await get_tree().create_timer(1).timeout
 	MinigameManager.close_minigame(complete, preload("res://scenes/minigames/wire_minigame.tscn"))
 	queue_free()
 
@@ -101,9 +102,11 @@ func _connect_wires(wireIds, colorId):
 		if wireEnd.wireId == wireIds[0] || wireEnd.wireId == wireIds[1]:
 			pos.append(wireEnd.get_node("Marker2D").global_position)
 	
+	AudioManager.play_sound(preload("res://src/sounds/connect.mp3"), -10)
 	_create_wire(pos, colorId)
 	
 	if correct.size() == ids.size():
+		timer.paused = true
 		get_tree().get_first_node_in_group("winPopup").visible = true
 
 		await get_tree().create_timer(1).timeout

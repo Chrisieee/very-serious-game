@@ -16,7 +16,7 @@ func _ready():
 
 func _pressed():
 	isOn = !isOn
-
+	AudioManager.play_sound(preload("res://src/sounds/lever.mp3"), -20)
 	if isOn:
 		texture_normal = onTexture
 		pulled.emit(leverId)
