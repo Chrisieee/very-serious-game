@@ -87,7 +87,7 @@ position = Vector2(311, 416.29)
 position = Vector2(3, 0)
 limit_left = 0
 limit_top = 0
-limit_right = 3950
+limit_right = 2834
 limit_bottom = 720
 
 [node name="minigameContainer" type="Control" parent="player/camera" unique_id=881569690]

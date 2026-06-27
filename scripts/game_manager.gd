@@ -1,7 +1,7 @@
 extends Node
 
 var startLives = 3
-var machines = [1, 2, 3, 4]
+var machines = [1, 2, 3]
 var hud
 var brokenMachine
 var levelActive = false
@@ -81,14 +81,14 @@ func lose_live():
 
 func game_over():
 	AudioManager.play_sound(preload("res://src/sounds/gameover.mp3"), -15)
-	AudioManager.ambientPlayer.queue_free()
+	AudioManager.ambientPlayer.stop()
 	timer.stop()
 	levelActive = false
 	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
 
 func complete_game():
 	AudioManager.play_sound(preload("res://src/sounds/complete-level.mp3"), -20)
-	AudioManager.ambientPlayer.queue_free()
+	AudioManager.ambientPlayer.stop()
 	timer.stop()
 	levelActive = false
 	get_tree().change_scene_to_file("res://scenes/completed.tscn")

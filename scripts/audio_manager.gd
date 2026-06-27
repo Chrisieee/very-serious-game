@@ -15,7 +15,7 @@ func play_music(stream: AudioStream):
 	musicPlayer.play()
 
 func play_ambient():
-	ambientPlayer.volume_db = -30
+	ambientPlayer.volume_db = -20
 	ambientPlayer.stream = preload("res://src/sounds/casino.mp3")
 	ambientPlayer.play()
 
